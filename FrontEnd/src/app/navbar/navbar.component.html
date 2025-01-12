@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-dumbbell brand-icon"></i> FitnessHub
+        </a>
+
+        <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" [ngClass]="{'show': isMenuOpen}">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active">
+                        <i class="fas fa-home nav-icon"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/add-fitness" routerLinkActive="active">
+                        <i class="fas fa-calendar-alt me-1"></i> Schedule
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/list-fitness" routerLinkActive="active">
+                        <i class="fas fa-eye nav-icon"></i> View Class
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:5000/dashboard">
+                        <i class="fas fa-chart-line nav-icon"></i> Analysis
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

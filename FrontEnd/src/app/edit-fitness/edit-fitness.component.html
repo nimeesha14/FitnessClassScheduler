@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+
+
+    </div>
+    <form [formGroup]="fitnessForm" (ngSubmit)="editData(fitnessForm)" class="mt-4">
+
+        <input type="hidden" formControlName="id">
+        <div class="mb-3">
+            <label for="name" class="form-label">Class Name</label>
+            <input type="text" class="form-control" [value]="fit?.name" id="name" formControlName="name"
+                placeholder="Enter class name">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="trainer" class="form-label">Trainer Name</label>
+            <input type="text" class="form-control" [value]="fit?.trainer" id="trainer" formControlName="trainer"
+                placeholder="Enter trainer name">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" id="category" formControlName="category" [value]="fit?.category">
+                <option value="">Select a category</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Cardio">Cardio</option>
+                <option value="Strength Training">Strength Training</option>
+                <option value="Pilates">Pilates</option>
+                <option value="HIIT">HIIT</option>
+                <option value="Zumba">Dance</option>
+                <option value="CrossFit">CrossFit</option>
+                <option value="Boxing">Boxing</option>
+                <option value="Swimming">Swimming</option>
+                <option value="Spinning">Spinning</option>
+            </select>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="duration" class="form-label">Duration (minutes)</label>
+            <input type="number" class="form-control" id="duration" formControlName="duration" min="1"
+                [value]="fit?.duration">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="capacity" class="form-label">Capacity</label>
+            <input type="number" class="form-control" id="capacity" formControlName="capacity" min="1" step="1"
+                [value]="fit?.capacity">
+
+        </div>
+
+        <button type="submit" class="btn-item" [disabled]="!fitnessForm.valid">Update</button>
+    </form>
+</div>

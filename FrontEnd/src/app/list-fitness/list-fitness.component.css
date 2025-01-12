@@ -1,0 +1,20 @@
+.btn-item {
+    background: linear-gradient(135deg, #4158D0, #C850C0);
+    text-decoration: none;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-item:disabled {
+    background: linear-gradient(135deg, #4158D0, #C850C0);
+    cursor: not-allowed;
+}
