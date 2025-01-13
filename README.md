@@ -4,6 +4,13 @@
 Welcome to the **Fitness Class Scheduler Project**, an innovative solution to streamline class scheduling and analytics. This project integrates a **Flask-based backend** with an **Angular-based frontend**, delivering an intuitive experience for both administrators and users.
 
 ---
+# 🌟 Demo Video 🎥
+
+Click the link below to view the demo video of our project:
+
+👉 https://drive.google.com/file/d/1OAY0HwnH14HHzSIzuebBB0_ezA-kMzP1/view?usp=drive_link
+
+
 
 ## 🖼️ Screenshots
 
