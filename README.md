@@ -12,34 +12,191 @@ Welcome to the **Fitness Class Scheduler Project**, an innovative solution to st
 
 The Flask backend provides the following RESTful API endpoints for managing class schedules:
 
-1. POST /api/classes
+## Endpoints
 
-   Description: Create a new class schedule.
-  
-   Response:
-  
-   ![image](https://github.com/user-attachments/assets/e1b16aa4-255b-4bd0-b20e-608dc9286742)
+### 1. **Get All Fitness Classes**
+**Endpoint:** `/fitness`  
+**Method:** `GET`  
 
+**Description:** Retrieves all fitness classes.
 
-2. GET /api/classes
+#### Request
+No request body is required.
 
-   Description: Retrieve a list of all class schedules.
-   
-   ![image](https://github.com/user-attachments/assets/52b9285b-4d07-4aa7-90da-a31e322c96bf)
+#### Response
+```json
+{
+  "Fitness": [
+    {
+      "id": 1,
+      "name": "Yoga",
+      "trainer": "Alice",
+      "category": "Wellness",
+      "duration": 60,
+      "capacity": 20
+    },
+    {
+      "id": 2,
+      "name": "Cardio",
+      "trainer": "Bob",
+      "category": "Fitness",
+      "duration": 45,
+      "capacity": 25
+    }
+  ]
+}
+```
 
+---
 
-4. PUT /api/classes/<id>
+### 2. **Add a New Fitness Class**
+**Endpoint:** `/fitness`  
+**Method:** `POST`  
 
-   Description: Retrieve a list of all class schedules.
-   
-   ![image](https://github.com/user-attachments/assets/586ffc3f-9a4f-468f-940b-846c124cdb06)
+**Description:** Adds a new fitness class.
 
-6. DELETE /api/classes/<id>
+#### Request
+```json
+{
+  "name": "Zumba",
+  "trainer": "Chris",
+  "category": "Dance",
+  "duration": 50,
+  "capacity": 30
+}
+```
 
-   Description: Delete a class schedule by its ID
-   
-   ![image](https://github.com/user-attachments/assets/0b9e5ba1-a0af-4c44-b891-625a9e4e015a)
+#### Response
+**Status Code:** `201 Created`
+```json
+{
+  "id": 3,
+  "name": "Zumba",
+  "trainer": "Chris",
+  "category": "Dance",
+  "duration": 50,
+  "capacity": 30
+}
+```
 
+---
+
+### 3. **Get a Single Fitness Class**
+**Endpoint:** `/fitnes/<int:id>`  
+**Method:** `GET`  
+
+**Description:** Retrieves a specific fitness class by ID.
+
+#### Request
+No request body is required.
+
+#### Response
+**On Success:**
+```json
+{
+  "id": 1,
+  "name": "Yoga",
+  "trainer": "Alice",
+  "category": "Wellness",
+  "duration": 60,
+  "capacity": 20
+}
+```
+
+**On Failure:**
+```json
+{
+  "message": "Fitness id not found"
+}
+```
+
+---
+
+### 4. **Delete a Fitness Class**
+**Endpoint:** `/fitnes/<int:id>`  
+**Method:** `DELETE`  
+
+**Description:** Deletes a fitness class by ID.
+
+#### Request
+No request body is required.
+
+#### Response
+**On Success:**
+```json
+{
+  "message": "Fitness deleted successfully"
+}
+```
+
+**On Failure:**
+```json
+{
+  "message": "Fitness id not found"
+}
+```
+
+---
+
+### 5. **Update a Fitness Class**
+**Endpoint:** `/fitnes/<int:id>`  
+**Method:** `PUT`  
+
+**Description:** Updates the details of an existing fitness class.
+
+#### Request
+```json
+{
+  "name": "Pilates",
+  "trainer": "Dana",
+  "category": "Wellness",
+  "duration": 55,
+  "capacity": 18
+}
+```
+
+#### Response
+**On Success:**
+```json
+{
+  "id": 1,
+  "name": "Pilates",
+  "trainer": "Dana",
+  "category": "Wellness",
+  "duration": 55,
+  "capacity": 18
+}
+```
+
+**On Failure:**
+```json
+{
+  "message": "Fitness id not found"
+}
+```
+
+---
+
+### 6. **View Dashboard**
+**Endpoint:** `/dashboard`  
+**Method:** `GET`  
+
+**Description:** Displays an attendance dashboard with statistics and a bar chart.
+
+#### Response
+Renders an HTML dashboard showing:
+- Average attendance by category
+- Top 3 classes with highest attendance
+- Bottom 3 classes with lowest attendance
+- A bar chart visualizing the data
+
+**Error Example:**
+If there is an issue (e.g., the `attendance_data.csv` file is missing):
+```text
+Error: [error message]
+```
+
+---
 
 
 ### Frontend Pages:
