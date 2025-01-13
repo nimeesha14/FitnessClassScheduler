@@ -251,7 +251,7 @@ Error: [error message]
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd fitness-class-scheduler/backend
+   cd FitnessClassScheduler/FlaskRestAPI
    ```
 2. Set up a virtual environment (optional):
    ```bash
@@ -263,11 +263,8 @@ Error: [error message]
    ```bash
    pip install -r requirements.txt
    ```
-4. Set up the database:
-   ```bash
-   flask db upgrade
-   ```
-5. Run the Flask server:
+
+4. Run the Flask server:
    ```bash
    flask run
    ```
@@ -275,7 +272,7 @@ Error: [error message]
 ### Frontend Setup:
 1. Navigate to the frontend directory:
    ```bash
-   cd fitness-class-scheduler/frontend
+   cd FitnessClassScheduler/FrontEnd
    ```
 2. Install dependencies:
    ```bash
